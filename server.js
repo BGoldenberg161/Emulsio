@@ -1,7 +1,7 @@
-require('dotenv').config();
-const express = require('express');
-const layouts = require('express-ejs-layouts');
-const app = express();
+require('dotenv').config()
+const express = require('express')
+const layouts = require('express-ejs-layouts')
+const app = express()
 const session = require('express-session')
 const SECRET_SESSION = process.env.SECRET_SESSION
 const passport = require('./config/ppConfig')
@@ -10,12 +10,12 @@ const flash = require('connect-flash')
 //require the authorization middleware
 const isLoggedIn = require('./middleware/isLoggedIn')
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 
-app.use(require('morgan')('dev'));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + '/public'));
-app.use(layouts);
+app.use(require('morgan')('dev'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.static(__dirname + '/public'))
+app.use(layouts)
 
 
 // secret: what we are actually giving the user to use for our site
@@ -42,19 +42,20 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index', { alerts: res.locals.alerts });
+  res.render('index', { alerts: res.locals.alerts })
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile');
+  res.render('profile')
 });
 
-app.use('/auth', require('./routes/auth'));
+app.use('/auth', require('./routes/auth'))
+app.use('/show', require('./routes/show'))
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 const server = app.listen(port, () => {
-  console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
+  console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`)
 });
 
-module.exports = server;
+module.exports = server

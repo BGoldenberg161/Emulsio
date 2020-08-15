@@ -1,14 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../models');
+const express = require('express')
+const router = express.Router()
+const db = require('../models')
 const passport = require('../config/ppConfig')
 
 router.get('/signup', (req, res) => {
-  res.render('auth/signup');
+  res.render('auth/signup')
 });
 
 router.get('/login', (req, res) => {
-  res.render('auth/login');
+  res.render('auth/login')
 });
 
 router.post('/signup', (req, res)=>{
@@ -58,4 +58,4 @@ router.get('/logout', (req, res)=>{
   res.redirect('/')
 })
 
-module.exports = router;
+module.exports = router
