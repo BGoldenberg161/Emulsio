@@ -12,32 +12,15 @@ router.get('/', (req, res) => {
         diet: req.query.diet
     }
     console.log(search)
-    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`, search)
-    .then((response) => {
-        let recipies = response.data
-        res.render('show', {recipies})
-        console.log(recipies)
-    })
-    .catch(err => {
-        console.log(err)
-    })
-})
-
-router.get('/detail', (req, res) => {
-    // let search = {
-    //     cuisine: req.query.cuisine,
-    //     diet: req.query.diet
-    // }
-    // console.log(search)
     // axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`, search)
     // .then((response) => {
     //     let recipies = response.data
     //     res.render('show', {recipies})
     //     console.log(recipies)
     // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
-})
+    .catch(err => {
+        console.log(err)
+    })
+  })
 
 module.exports = router

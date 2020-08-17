@@ -1,0 +1,19 @@
+<h1>Results</h1>
+
+<% recipies.results.forEach( r => { %>
+    <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+               <img src="<%=r.image %>"> 
+            </div>
+            <div class="card-content">
+              <p><%=r.title %></p>
+            </div>
+            <div class="card-action">
+              <a href="show/detail">See More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<% }); %> 
