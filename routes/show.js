@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
     const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${search.cuisine}&diet=${search.diet}`
     axios.get(searchUrl)
     .then((response) => {
-        let recipies = response.data
-        res.render('show', {recipies})
-        console.log(recipies)
+        let recipes = response.data
+        res.render('show', {recipes})
+        console.log(recipes)
     })
     .catch(err => {
         console.log(err)
@@ -28,9 +28,9 @@ router.get('/detail', (req, res) => {
     const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
     axios.get(searchUrl)
     .then((response) => {
-        let recipie = response.data
-        res.render('detail', {recipie})
-        console.log(recipie)
+        let recipe = response.data
+        res.render('detail', {recipe})
+        console.log(recipe)
     })
     .catch(err => {
         console.log(err)

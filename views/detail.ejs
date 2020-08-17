@@ -1,33 +1,32 @@
 <h1>Detail</h1>
-<img src="<%= recipie.image %>" alt="">
-<h2>Ingredients</h2>
-<ul>
-<% recipie.extendedIngredients.forEach( e => { %>
-    <li><%= `${e.name}: ${e.amount} ${e.unit}` %> </li>
-<% }) %>
-</ul>
-<h2>Servings</h2>
-<p><%= recipie.servings %> </p>
-<h2>Ready in:</h2>
-<p><%= recipie.readyInMinutes %> minutes </p>
-<h2>Summary</h2>
-<p><%= recipie.summary %></p>
-<h2>Instructions</h2>
-<p><%= recipie.instructions %></p>
-<h2>Cuisines</h2>
-<ul>
-    <% recipie.cuisines.forEach( c => { %>
-        <li><%= c %> </li>
+<div>
+    <img src="<%= recipe.image %>" alt="">
+    <h2>Ingredients</h2>
+    <ul style="list-style-type:circle">
+    <% recipe.extendedIngredients.forEach( e => { %>
+        <li><%= `${e.name}: ${e.amount} ${e.unit}` %> </li>
     <% }) %>
-</ul>
-<h2>Diets</h2>
-<ul>
-    <% recipie.diets.forEach( d => { %>
-        <li><%= d %> </li>
-    <% }) %>
-</ul>
+    </ul>
+    <h2>Servings</h2>
+    <p><%= recipe.servings %> </p>
+    <h2>Cook time:</h2>
+    <p><%= recipe.readyInMinutes %> minutes </p>
+    <h2>Summary</h2>
+    <p><%- recipe.summary %></p>
+    <h2>Instructions</h2>
+    <p><%= recipe.instructions %></p>
+    <h2>Cuisines</h2>
+    <ul>
+        <% recipe.cuisines.forEach( c => { %>
+            <li><%= c %> </li>
+        <% }) %>
+    </ul>
+    <h2>Diets</h2>
+    <ul>
+        <% recipe.diets.forEach( d => { %>
+            <li><%= d %> </li>
+        <% }) %>
+    </ul>
 
-
-
-
-<a href="<%= recipie.sourceUrl %>">Link to origional posting:</a>
+    <a href="<%= recipe.sourceUrl %>">Link to original posting</a>
+</div>

@@ -3,8 +3,9 @@
 <div class="search">
     <form action="/show" method="GET">
         <div class="input-field col s12"></div>
-            
-            <select id="cuisine" name="cuisine" required>
+        <label for="cuisine">Choose a Cuisine:</label>
+        <input type="text" id="cuisine" name="cuisine" required>
+            <!-- <select id="cuisine" name="cuisine" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="African">African</option>
                 <option value="American">American</option>
@@ -32,13 +33,13 @@
                 <option value="Spanish">Spanish</option>
                 <option value="Thai">Thai</option>
                 <option value="Vietnamese">Vietnamese</option>
-            </select> 
-            <label>Choose a Cuisine:</label>
+            </select>  -->
         </div>       
         <br>
         <div class="input-field col s12"></div>
-            
-            <select id="diet" name="diet" required>
+        <label for="diet">Choose a Diet:</label>
+        <input type="text" id="diet" name="diet" required>
+            <!-- <select id="diet" name="diet" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="Gluten Free">Gluten Free</option>
                 <option value="Ketogenic">Ketogenic</option>
@@ -50,8 +51,7 @@
                 <option value="Paleo">Paleo</option>
                 <option value="Primal">Primal</option>
                 <option value="Whole30">Whole30</option>
-            </select>    
-            <label>Choose a Diet:</label>  
+            </select>     -->
         </div>  
         <br>
         <button type="submit">Search</button>
