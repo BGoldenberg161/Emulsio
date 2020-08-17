@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const db = require('.');
 module.exports = (sequelize, DataTypes) => {
   class bin extends Model {
     /**
@@ -11,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.bin.belongsToMany(models.recipe, {through: 'binsRecipes'})
     }
   };
   bin.init({

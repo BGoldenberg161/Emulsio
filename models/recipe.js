@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.recipe.belongsToMany(models.binsRecipes)
+      models.recipe.belongsToMany(models.bin, {through: 'binsRecipes'})
     }
   };
   recipe.init({

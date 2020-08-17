@@ -1,11 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const router = express.Router()
-const db = require('../models')
 const axios = require('axios')
 
 let API_KEY = process.env.API_KEY
 
+
+// search by cuisine & diet
 router.get('/', (req, res) => {
     let search = {
         cuisine: req.query.cuisine,
@@ -23,6 +24,7 @@ router.get('/', (req, res) => {
     })
 })
 
+// show details
 router.get('/detail', (req, res) => {
     let rId = req.query.r_id
     const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
