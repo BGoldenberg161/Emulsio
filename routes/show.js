@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
         cuisine: req.query.cuisine,
         diet: req.query.diet
     }
-    console.log(search)
-    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`, search)
+    const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${search.cuisine}&diet=${search.diet}`
+    axios.get(searchUrl)
     .then((response) => {
         let recipies = response.data
         res.render('show', {recipies})
@@ -24,20 +24,17 @@ router.get('/', (req, res) => {
 })
 
 router.get('/detail', (req, res) => {
-    // let search = {
-    //     cuisine: req.query.cuisine,
-    //     diet: req.query.diet
-    // }
-    // console.log(search)
-    // axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}`, search)
-    // .then((response) => {
-    //     let recipies = response.data
-    //     res.render('show', {recipies})
-    //     console.log(recipies)
-    // })
-    // .catch(err => {
-    //     console.log(err)
-    // })
+    let rId = req.query.r_id
+    const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
+    axios.get(searchUrl)
+    .then((response) => {
+        let recipie = response.data
+        res.render('detail', {recipie})
+        console.log(recipie)
+    })
+    .catch(err => {
+        console.log(err)
+    })
 })
 
 module.exports = router

@@ -51,7 +51,6 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.use('/auth', require('./routes/auth'))
 app.use('/show', require('./routes/show'))
-app.use('/detail', require('./routes/detail'))
 
 
 const port = process.env.PORT || 3000

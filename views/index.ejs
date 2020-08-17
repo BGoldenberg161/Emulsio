@@ -2,12 +2,68 @@
 
 <div class="search">
     <form action="/show" method="GET">
-        <label for="cuisine">Cuisine Type:</label>
-        <input id="cuisine" type="text" name="cuisine" placeholder="Itialian, American, etc." required>
+        <div class="input-field col s12"></div>
+            
+            <select id="cuisine" name="cuisine" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="African">African</option>
+                <option value="American">American</option>
+                <option value="British">British</option>
+                <option value="Cajun">Cajun</option>
+                <option value="Caribbean">Caribbean</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Eastern European">Eastern European</option>
+                <option value="European">European</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Greek">Greek</option>
+                <option value="Indian">Indian</option>
+                <option value="Irish">Irish</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Jewish">Jewish</option>
+                <option value="Korean">Korean</option>
+                <option value="Latin American">Latin American</option>
+                <option value="Mediterranean">Mediterranean</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Nordic">Nordic</option>
+                <option value="Southern">Southern</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Thai">Thai</option>
+                <option value="Vietnamese">Vietnamese</option>
+            </select> 
+            <label>Choose a Cuisine:</label>
+        </div>       
         <br>
-        <label for="diet">Diet:</label>
-        <input id="diet" type="text" name="diet" placeholder="Paleo, Vegitarian etc.">
+        <div class="input-field col s12"></div>
+            
+            <select id="diet" name="diet" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Gluten Free">Gluten Free</option>
+                <option value="Ketogenic">Ketogenic</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Pescetarian">Pescetarian</option>
+                <option value="Paleo">Paleo</option>
+                <option value="Primal">Primal</option>
+                <option value="Whole30">Whole30</option>
+            </select>    
+            <label>Choose a Diet:</label>  
+        </div>  
         <br>
         <button type="submit">Search</button>
     </form>
 </div>
+
+<!-- <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Materialize Select</label>
+</div> -->
