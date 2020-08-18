@@ -4,6 +4,8 @@
 
 <h4>Here are your saved recipies</h4>
 
-<% folders.forEach(folder => { %>
-    <a href=""><%= folder.userTitle %> </a>
-<% }) %> 
+<% if(user.bins) { %>
+    <% user.bins.forEach(folder => { %>
+        <a href="#"><%= folder.userTitle %> </a>
+    <% }) %> 
+<% } %> 

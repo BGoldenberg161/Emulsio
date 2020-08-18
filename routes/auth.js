@@ -22,11 +22,11 @@ router.post('/signup', (req, res)=>{
   })
   .then(([user, created]) => {
     if(created){
-      console.log(`${user.name} was created`)
+      // console.log(`${user.name} was created`)
       // Flash Message
       passport.authenticate('local', {
         successRedirect: '/', 
-        successFlash: 'Account created and logging in...'
+        successFlash: `Account number ${user.id} created and logging in...`
       }) (req, res)
       // res.redirect('/')
     } else {
@@ -38,23 +38,27 @@ router.post('/signup', (req, res)=>{
   })
   .catch(err => {
     console.log('Error:', err)
-    req.flash('errror', `Error, too bad you gotta be a dev for it to help you... ${err}`)
+    req.flash('errror', `Error... too bad you gotta be a dev for it to help you... ${err}`)
     res.redirect('/auth/signup')
   })
 })
 
 //FLASH message
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/', 
-  failureRedirect: '/auth/login',
-  successFlash: 'Welcome back!',
-  failureFlash: 'Either email or password incorrect, please try again'
-}))
+    successRedirect: '/',
+    failureRedirect: '/auth/login',
+    successFlash: `Welcome back!`,
+    failureFlash: 'Either email or password incorrect, please try again'
+  })
+)
+
+
+
 
 
 router.get('/logout', (req, res)=>{
   req.logOut()
-  req.flash('success', 'Thank you, come again... Apu')
+  req.flash('success', 'Thank you, come again...')
   res.redirect('/')
 })
 

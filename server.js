@@ -45,12 +45,10 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts })
 });
 
-app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile')
-});
-
 app.use('/auth', require('./routes/auth'))
 app.use('/show', require('./routes/show'))
+app.use('/profile', require('./routes/profile'))
+
 
 
 const port = process.env.PORT || 3000

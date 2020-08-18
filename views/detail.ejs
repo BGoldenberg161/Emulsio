@@ -27,7 +27,15 @@
             <li><%= d %> </li>
         <% }) %>
     </ul>
-    
+
+    <h4>Create a new folder?</h4>
+
+<form action="/profile/folders" method="POST">
+    <label for="folderName"></label>
+    <input type="text" name="folderName" id="folderName" placeholder="New folder name here" required>
+    <button type="submit">Make New</button>
+</form> 
+
 
     <a href="<%= recipe.sourceUrl %>">Link to original posting</a>
 </div>

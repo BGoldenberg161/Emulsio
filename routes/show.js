@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
 
 // show details
 router.get('/detail', (req, res) => {
+    console.log(req.user)
     let rId = req.query.r_id
     const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
     axios.get(searchUrl)
