@@ -2,10 +2,14 @@
 
 <h3>Welcome to your PROFILE</h3>
 
-<h4>Here are your saved recipies</h4>
+<h4>Here are your saved recipie folders:</h4>
 
-<% if(user.bins) { %>
-    <% user.bins.forEach(folder => { %>
-        <a href="#"><%= folder.userTitle %> </a>
+<% if(bins) { %>
+    <% bins.forEach( f =>{ %>
+        <a href="/profile/folders/show/<%= f.id %>"><%= f.userTitle %> </a><br>
+        <form method="POST" action="/profile/folders?_method=DELETE">
+            <input type="hidden" name="name" value="<%= f.name %>">
+            <button class="blue-grey darken-3 white-text z-depth-2" type="submit">Remove folder</button>
+        </form>
     <% }) %> 
 <% } %> 

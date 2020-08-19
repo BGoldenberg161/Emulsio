@@ -6,6 +6,7 @@ const session = require('express-session')
 const SECRET_SESSION = process.env.SECRET_SESSION
 const passport = require('./config/ppConfig')
 const flash = require('connect-flash')
+const methodOverride = require('method-override')
 
 //require the authorization middleware
 const isLoggedIn = require('./middleware/isLoggedIn')
@@ -16,6 +17,7 @@ app.use(require('morgan')('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/public'))
 app.use(layouts)
+app.use(methodOverride('_method'))
 
 
 // secret: what we are actually giving the user to use for our site
@@ -55,5 +57,6 @@ const port = process.env.PORT || 3000
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`)
 });
+
 
 module.exports = server

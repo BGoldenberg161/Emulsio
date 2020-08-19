@@ -1,69 +1,64 @@
-<h2>Homepage</h2>
-<h3>The emulsion of good eats and dietary restrictions</h3>
-<h4>What would you like to eat?</h4>
+    <h2>Homepage</h2>
+    <h3>The emulsion of good eats and dietary restrictions</h3>
+    <h4>What would you like to eat?</h4>
 
-<% if(!currentUser) { %>
-<h2>Please signup/login to search</h2>
-<% } else { %>
-    <div class="search">
-        <form action="/show" method="GET">
-            <div class="input-field col s12"></div>
-            <label for="cuisine">Choose a Cuisine:</label>
-            <input type="text" id="cuisine" name="cuisine" required>
-                <!-- <select id="cuisine" name="cuisine" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="African">African</option>
-                    <option value="American">American</option>
-                    <option value="British">British</option>
-                    <option value="Cajun">Cajun</option>
-                    <option value="Caribbean">Caribbean</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Eastern European">Eastern European</option>
-                    <option value="European">European</option>
-                    <option value="French">French</option>
-                    <option value="German">German</option>
-                    <option value="Greek">Greek</option>
-                    <option value="Indian">Indian</option>
-                    <option value="Irish">Irish</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Jewish">Jewish</option>
-                    <option value="Korean">Korean</option>
-                    <option value="Latin American">Latin American</option>
-                    <option value="Mediterranean">Mediterranean</option>
-                    <option value="Mexican">Mexican</option>
-                    <option value="Middle Eastern">Middle Eastern</option>
-                    <option value="Nordic">Nordic</option>
-                    <option value="Southern">Southern</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Thai">Thai</option>
-                    <option value="Vietnamese">Vietnamese</option>
-                </select>  -->
-            </div>       
-            <br>
-            <div class="input-field col s12"></div>
-            <label for="diet">Choose a Diet:</label>
-            <input type="text" id="diet" name="diet" required>
-                <!-- <select id="diet" name="diet" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="Gluten Free">Gluten Free</option>
-                    <option value="Ketogenic">Ketogenic</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
-                    <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Pescetarian">Pescetarian</option>
-                    <option value="Paleo">Paleo</option>
-                    <option value="Primal">Primal</option>
-                    <option value="Whole30">Whole30</option>
-                </select>     -->
-            </div>  
-            <br>
-            <!-- <% ///const userLoginMessage = document.querySelector('.alert alert-success') %> 
-            <%/// const userId = userLoginMessage.split('').slice(16, 1) %> 
-            <%/// console.log(userId) %>
-            <input hidden type="text" value="<%=/// userId %>"> -->
-            <button type="submit">Search</button>
-        </form>
-    </div>
-<% }%>
+    <% if(!currentUser) { %>
+    <h2>Please signup/login to search</h2>
+    <% } else { %>
+        <div class="search">
+            <form action="/show" method="GET">
+                <div class="input-field col s12"></div>
+                <label for="cuisine">Choose a Cuisine:</label>
+                    <select id="cuisine" name="cuisine" required>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="African">African</option>
+                        <option value="American">American</option>
+                        <option value="British">British</option>
+                        <option value="Cajun">Cajun</option>
+                        <option value="Caribbean">Caribbean</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Eastern European">Eastern European</option>
+                        <option value="European">European</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Irish">Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Jewish">Jewish</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Latin American">Latin American</option>
+                        <option value="Mediterranean">Mediterranean</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Middle Eastern">Middle Eastern</option>
+                        <option value="Nordic">Nordic</option>
+                        <option value="Southern">Southern</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                    </select>
+                </div>       
+                <br>
+                <div class="input-field col s12"></div>
+                <label for="diet">Choose a Diet:</label>
+                    <select id="diet" name="diet" required>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Gluten Free">Gluten Free</option>
+                        <option value="Ketogenic">Ketogenic</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                        <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Pescetarian">Pescetarian</option>
+                        <option value="Paleo">Paleo</option>
+                        <option value="Primal">Primal</option>
+                        <option value="Whole30">Whole30</option>
+                    </select>    
+                </div>  
+                <br>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    <% }%>
+

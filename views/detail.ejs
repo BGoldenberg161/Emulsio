@@ -1,5 +1,5 @@
-<h1>Detail</h1>
 <div>
+    <h1><%= recipe.title %></h1>
     <img src="<%= recipe.image %>" alt="">
     <h2>Ingredients</h2>
     <ul style="list-style-type:circle">
@@ -28,11 +28,14 @@
         <% }) %>
     </ul>
 
-    <h4>Create a new folder?</h4>
+    <h4>Add to folder?</h4>
 
 <form action="/profile/folders" method="POST">
     <label for="folderName"></label>
-    <input type="text" name="folderName" id="folderName" placeholder="New folder name here" required>
+    <input type="text" name="folderName" id="folderName" placeholder="folder name here" required>
+    <input hidden type="text" name="foodId" value="<%= recipe.id %>">
+    <input hidden type="text" name="foodImg" value="<%= recipe.image %>">
+    <input hidden type="text" name="foodTitle" value="<%= recipe.title %>">
     <button type="submit">Make New</button>
 </form> 
 
