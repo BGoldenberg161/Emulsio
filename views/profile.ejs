@@ -1,15 +1,23 @@
-<h2>Profile Page</h2>
+<div class="container">
+    <h1>Your recipie folders:</h1>
 
-<h3>Welcome to your PROFILE</h3>
+    <% if(bins) { %>
+        <% bins.forEach( f =>{ %>
+            <div class="container">
+                <div class="userFolder">
+                    <a href="/profile/folders/show/<%= f.id %>"><%= f.userTitle %> </a><br>
+                    <form method="POST" action="/profile/folders?_method=PUT">
+                        <input type="hidden" name="id" value="<%= f.id %>">
+                        <input type="text" name="newName" placeholder="Change folder name?" required>
+                        <button  type="submit" class="waves-effect waves-light btn yellow darken-2"><i class="material-icons left">input</i>Update folder name</button>
+                    </form>
 
-<h4>Here are your saved recipie folders:</h4>
-
-<% if(bins) { %>
-    <% bins.forEach( f =>{ %>
-        <a href="/profile/folders/show/<%= f.id %>"><%= f.userTitle %> </a><br>
-        <form method="POST" action="/profile/folders?_method=DELETE">
-            <input type="hidden" name="name" value="<%= f.name %>">
-            <button class="blue-grey darken-3 white-text z-depth-2" type="submit">Remove folder</button>
-        </form>
-    <% }) %> 
-<% } %> 
+                    <form method="POST" action="/profile/folders?_method=DELETE">
+                        <input type="hidden" name="id" value="<%= f.id %>">
+                        <button type="submit" class="waves-effect waves-light btn red accent-4"><i class="material-icons left">delete</i>Remove folder</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %> 
+    <% } %> 
+</div>

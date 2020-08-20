@@ -17,25 +17,20 @@ router.get('/', (req, res) => {
     .then((response) => {
         let recipes = response.data
         res.render('show', {recipes})
-        console.log(recipes)
-    })
-    .catch(err => {
+    }).catch(err => {
         console.log(err)
     })
 })
 
 // show details
 router.get('/detail', (req, res) => {
-    console.log(req.user)
     let rId = req.query.r_id
     const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
     axios.get(searchUrl)
     .then((response) => {
         let recipe = response.data
         res.render('detail', {recipe})
-        console.log(recipe)
-    })
-    .catch(err => {
+    }).catch(err => {
         console.log(err)
     })
 })

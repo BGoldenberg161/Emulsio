@@ -7,7 +7,6 @@ router.get('/', (req, res)=>{
     db.bin.findAll({
         where: {userId: req.user.id} 
     }).then( bins => {
-        console.log(bins)
       res.render('profile', { bins })
     }).catch((err) => {
       console.log('Error', err)
@@ -43,13 +42,25 @@ router.post('/folders', (req, res) => {
 // Delete folder from profile
 router.delete('/folders', (req, res) => {
       db.bin.destroy({
-        where: {userTitle: req.body.name,
+        where: {id: req.body.id,
                 userId: req.user.id}
       }).then( () =>{
         res.redirect('/profile')
       }).catch(err => { 
       console.log('Error:', err) // render error
     })
+})
+
+// Delete folder from profile
+router.put('/folders', (req, res) => {
+    db.bin.update(
+        {userTitle: req.body.newName},
+        {where: { id: req.body.id}}
+    ).then( () =>{
+      res.redirect('/profile')
+    }).catch(err => { 
+    console.log('Error:', err) // render error
+  })
 })
 
 // show folder items
@@ -66,13 +77,13 @@ router.get('/folders/show/:id', (req, res) => {
 
 // delete recipe from folder
 router.delete('/poof', (req, res) => {
-    console.log(req.body.id)
-    db.recipe.destroy({
-      where: {id: req.body.id}
+    db.binsRecipes.destroy({
+      where: {recipeId: req.body.id}
     }).then( () =>{
       res.redirect('/profile')
     }).catch(err => { 
     console.log('Error:', err) // render error
   })
 })
+
 module.exports = router

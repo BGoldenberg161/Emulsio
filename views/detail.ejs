@@ -1,6 +1,15 @@
-<div>
+<div class="container">
     <h1><%= recipe.title %></h1>
-    <img src="<%= recipe.image %>" alt="">
+    <img src="<%= recipe.image %>" alt="recipe image"><br>
+    <a href="<%= recipe.sourceUrl %>">Link to original posting</a>
+    <h2>Safe Diets</h2>
+    <ul>
+        <% recipe.diets.forEach( d => { %>
+            <li><%= d %> </li>
+        <% }) %>
+    </ul>
+    <h2>Cook time:</h2>
+    <p><%= recipe.readyInMinutes %> minutes </p>
     <h2>Ingredients</h2>
     <ul style="list-style-type:circle">
     <% recipe.extendedIngredients.forEach( e => { %>
@@ -9,36 +18,28 @@
     </ul>
     <h2>Servings</h2>
     <p><%= recipe.servings %> </p>
-    <h2>Cook time:</h2>
-    <p><%= recipe.readyInMinutes %> minutes </p>
+    <h2>Instructions</h2>
+    <% if(recipe.instructions) { %>
+        <p><%= recipe.instructions %></p>
+    <% } else { %>
+        <p>Sorry, no instructions for this recipe</p>
+    <% } %> 
     <h2>Summary</h2>
     <p><%- recipe.summary %></p>
-    <h2>Instructions</h2>
-    <p><%= recipe.instructions %></p>
-    <h2>Cuisines</h2>
-    <ul>
-        <% recipe.cuisines.forEach( c => { %>
-            <li><%= c %> </li>
-        <% }) %>
-    </ul>
-    <h2>Diets</h2>
-    <ul>
-        <% recipe.diets.forEach( d => { %>
-            <li><%= d %> </li>
-        <% }) %>
-    </ul>
+    <h2>Cuisine Types</h2>
+    <!-- <ul>
+        <% //recipe.cuisines.forEach( c => { %>
+            <li><%= //c %> </li>
+        <% //}) %>
+    </ul> -->
+    <h4>Save to a folder?</h4>
 
-    <h4>Add to folder?</h4>
-
-<form action="/profile/folders" method="POST">
-    <label for="folderName"></label>
-    <input type="text" name="folderName" id="folderName" placeholder="folder name here" required>
-    <input hidden type="text" name="foodId" value="<%= recipe.id %>">
-    <input hidden type="text" name="foodImg" value="<%= recipe.image %>">
-    <input hidden type="text" name="foodTitle" value="<%= recipe.title %>">
-    <button type="submit">Make New</button>
-</form> 
-
-
-    <a href="<%= recipe.sourceUrl %>">Link to original posting</a>
+    <form action="/profile/folders" method="POST">
+        <label for="folderName"></label>
+        <input type="text" name="folderName" id="folderName" placeholder="folder name here" required>
+        <input hidden type="text" name="foodId" value="<%= recipe.id %>">
+        <input hidden type="text" name="foodImg" value="<%= recipe.image %>">
+        <input hidden type="text" name="foodTitle" value="<%= recipe.title %>">
+        <button type="submit" class="waves-effect waves-light btn green accent-3"><i class="material-icons left">add</i>Make New/Add</button>
+    </form> 
 </div>

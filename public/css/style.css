@@ -1,9 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap');
 nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
 }
 
-h1 {
-  color: chartreuse;
+body {
+  margin: 0 auto;
+  font-family: 'Indie Flower', cursive;
+  background-image: url("https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: rgb(27, 26, 39);
 }
+
+p, label, li {
+  font-size: 20px;
+  color: rgb(27, 26, 39);
+}
+
+a {
+  font-size: 30px;
+}
+
+button {
+  margin: 5px;
+}
+
+::placeholder {
+  color: rgb(121, 114, 138);
+}
+
+.brand-logo {
+  font-family: 'Pacifico', cursive;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.750);
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
