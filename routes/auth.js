@@ -52,10 +52,6 @@ router.post('/login', passport.authenticate('local', {
   })
 )
 
-
-
-
-
 router.get('/logout', (req, res)=>{
   req.logOut()
   req.flash('success', 'Thank you, come again...')

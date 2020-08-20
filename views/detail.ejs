@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container z-depth-5">
     <h1><%= recipe.title %></h1>
-    <img src="<%= recipe.image %>" alt="recipe image"><br>
+    <img class="detailImage" src="<%= recipe.image %>" alt="recipe image"><br>
     <a href="<%= recipe.sourceUrl %>">Link to original posting</a>
     <h2>Safe Diets</h2>
     <ul>
@@ -20,7 +20,10 @@
     <p><%= recipe.servings %> </p>
     <h2>Instructions</h2>
     <% if(recipe.instructions) { %>
-        <p><%= recipe.instructions %></p>
+        <% const instructionsArray= recipe.instructions.split('.') %> 
+        <% instructionsArray.forEach((step, index) => { %>
+            <p><%= index + 1 %>. <%= step %></p><br>
+        <% })%>
     <% } else { %>
         <p>Sorry, no instructions for this recipe</p>
     <% } %> 

@@ -29,6 +29,7 @@ router.get('/detail', (req, res) => {
     axios.get(searchUrl)
     .then((response) => {
         let recipe = response.data
+        console.log(recipe)
         res.render('detail', {recipe})
     }).catch(err => {
         console.log(err)

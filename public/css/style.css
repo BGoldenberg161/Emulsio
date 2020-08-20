@@ -44,6 +44,18 @@ button {
   padding: 5px;
 }
 
+.container-2 {
+  background: linear-gradient(rgba(49, 27, 147, 1), rgba(49, 27, 147, .750));
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 5px;
+  color: white;
+}
+
+.detailImage {
+  width: 95%;
+}
+
 
 
 
