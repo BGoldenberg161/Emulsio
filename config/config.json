@@ -13,6 +13,6 @@
     "database": "emulsio_production",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "use_env_variable": "postgres://rqspnnfgmifuwh:423889dad4b0e87cf525b3f19f08c124536a2bc77af95647242e0cb7ac0f4c31@ec2-52-22-94-132.compute-1.amazonaws.com:5432/d3po5j298gvba9"
+    "use_env_variable": "DATABASE_URL"
   }
 }
