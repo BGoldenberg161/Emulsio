@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&family=Source+Sans+Pro&display=swap');
 nav ul li {
   text-decoration: none;
   display: inline-block;
@@ -54,6 +54,10 @@ button {
 
 .detailImage {
   width: 95%;
+}
+
+.boring {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 

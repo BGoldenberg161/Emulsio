@@ -13,7 +13,7 @@
     <h2>Ingredients</h2>
     <ul style="list-style-type:circle">
     <% recipe.extendedIngredients.forEach( e => { %>
-        <li><%= `${e.name}: ${e.amount} ${e.unit}` %> </li>
+        <li class="boring"><%= `${e.name}: ${e.amount} ${e.unit}` %> </li>
     <% }) %>
     </ul>
     <h2>Servings</h2>
@@ -21,9 +21,9 @@
     <h2>Instructions</h2>
     <% if(recipe.instructions) { %>
         <% const instructionsArray= recipe.instructions.split('.') %> 
-        <% instructionsArray.forEach((step, index) => { %>
-            <p><%= index + 1 %>. <%= step %></p><br>
-        <% })%>
+        <% for(let i=0; i<instructionsArray.length-1;i++) { %>
+            <p class="boring"><%= i+1 %>. <%= instructionsArray[i] %></p><br>
+        <% } %> 
     <% } else { %>
         <p>Sorry, no instructions for this recipe</p>
     <% } %> 

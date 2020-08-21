@@ -5,14 +5,16 @@ const axios = require('axios')
 
 let API_KEY = process.env.API_KEY
 
+let searchUrl = ''
 
-// search by cuisine & diet
+// search by cuisine & diet & type
 router.get('/', (req, res) => {
     let search = {
         cuisine: req.query.cuisine,
-        diet: req.query.diet
+        diet: req.query.diet,
+        type: req.query.type
     }
-    const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${search.cuisine}&diet=${search.diet}`
+    searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${search.cuisine}&diet=${search.diet}&type${search.type}`
     axios.get(searchUrl)
     .then((response) => {
         let recipes = response.data
@@ -25,8 +27,8 @@ router.get('/', (req, res) => {
 // show details
 router.get('/detail', (req, res) => {
     let rId = req.query.r_id
-    const searchUrl = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
-    axios.get(searchUrl)
+    const searchUrl2 = `https://api.spoonacular.com/recipes/${rId}/information?apiKey=${API_KEY}`
+    axios.get(searchUrl2)
     .then((response) => {
         let recipe = response.data
         console.log(recipe)
