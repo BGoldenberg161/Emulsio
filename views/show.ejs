@@ -19,11 +19,9 @@
 <% }); %> 
   <ul class="pagination">
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="waves-effect"><a href="/show/0">1</a></li>
-    <li class="waves-effect"><a href="/show/1">2</a></li>
-    <li class="waves-effect"><a href="/show/2">3</a></li>
-    <li class="waves-effect"><a href="/show/3">4</a></li>
-    <li class="waves-effect"><a href="/show/4">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <% for (let i=0; i<recipes.totalResults/10; i++) { %>
+        <li class="waves-effect deep-purple"><a type="submit" href="/show?cuisine=<%= search.cuisine %>&diet=<%= search.diet %>&type=<%= search.type %>&offset=<%= i*10 %>"><%= i + 1 %></a></li>
+    <% } %> 
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   </ul>
 </div>
