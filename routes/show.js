@@ -23,6 +23,21 @@ router.get('/', (req, res) => {
         console.log(err)
     })
 })
+// natural language search
+router.get('/language', (req, res) => {
+    let search = {
+        input: req.query.input
+    }
+    const searchUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${search.input}`
+    axios.get(searchUrl)
+    .then((response) => {
+        console.log(response.data)
+        let recipes = response.data
+        res.render('show', {recipes, search})
+    }).catch(err => {
+        console.log(err)
+    })
+})
 
 // show details
 router.get('/detail', (req, res) => {
