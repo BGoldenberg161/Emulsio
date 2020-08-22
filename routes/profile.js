@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
+const isLoggedIn = require('../middleware/isLoggedIn')
+
 
 // push bin finformation to page
 router.get('/', (req, res)=>{
@@ -52,7 +54,7 @@ router.delete('/folders', (req, res) => {
 })
 
 // Delete folder from profile
-router.put('/folders', (req, res) => {
+router.put('/folders', isLoggedIn, (req, res) => {
     db.bin.update(
         {userTitle: req.body.newName},
         {where: { id: req.body.id}}
@@ -64,7 +66,7 @@ router.put('/folders', (req, res) => {
 })
 
 // show folder items
-router.get('/folders/show/:id', (req, res) => {
+router.get('/folders/show/:id', isLoggedIn, (req, res) => {
     db.bin.findByPk(req.params.id, { 
         include: { model: db.recipe }
         }).then( folder => {

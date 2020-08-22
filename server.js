@@ -49,7 +49,8 @@ app.get('/', (req, res) => {
 
 app.use('/auth', require('./routes/auth'))
 app.use('/show', require('./routes/show'))
-app.use('/profile', require('./routes/profile'))
+app.use('/profile', isLoggedIn, require('./routes/profile'))
+
 
 
 
