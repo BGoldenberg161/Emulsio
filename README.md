@@ -1,7 +1,8 @@
 # Emulsio
 ____
 Project 2 General Assembly 713 Squad
-## Requirements
+
+## Project Requirements
 * Include sign up/log in functionality, with hashed passwords & an authorization flow. You will be able to start your app from the auth boilerplate built w/ in-class code-alongs.
 * Have at least 2 models (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.
 * Note: If your app idea doesn't really call for more models, let your instructors know and they can suggest ideas for other sufficiently difficult replacements for this requirement.
@@ -26,6 +27,10 @@ _______
 ## Where to access Emulsio
 [Emulsio](https://emulsio.herokuapp.com/)
 
+
+## Images of Emulsio in Action
+
+
 ## How to Install Locally
 
 1. Fork and clone [this](https://github.com/BGoldenberg161/Emulsio) repo
@@ -48,6 +53,13 @@ _______
 
 8. Find your perfect recipes!
 ____
+## User Stories
+>I have severe food allergies, but I still want delicious meals so I can keep my healthy life.. Without giving up extra time to find recipies that I can enjoy. This app has changed how I approach cooking!
+
+>My wife has always wanted me to cook for her, but she is on these crazy diets! I never knew where to start, but Emulsio makes it so easy now!
+
+>I have always been a picky eater, but I want my guests to enjoy the meal also, I can have both with this app!
+____
 ## Planning
 ### ERD
 ![ERD Image](./images/ERD.png)
@@ -58,16 +70,17 @@ For my database, I wanted the user to be able to create their own folders and th
 
 In an attempt to keep my app user friendly, I wanted to keep is simple. Each page will have a similar look while requested the required information. The app obviously evolved over time while in development, but the finished product is not too far off of the initial plan, and the only changes were improvements!
 ____
+## Lessons Learned
+The amount of knowledge gained through the creation of Emulsio is vast. I have gained a full understanding of how routes and views are connected to eachother and how data is accessed. Using the multiple npm packages, the authentication tools, and some google-fu I was able to learn a ton while building something I can use in my every day life. This understanding will help me continue to grow as a developer, I am excited to see what my future will hold!
+
+## Future Goals
+One stretch goal that I didn't get to implement is a custom input drop down list for folder creation. When adding a recipe to a folder, having a drop down menu that contained the user's existing folders plus an empty cell that the user could type a new folder name into would be some slick functionality. 
+
+____
 ## Author
 * Branden Goldenberg - Initial creator
 * Would love to add more names below!
 
-### Shoutouts
-Many many thanks to the many classmates and instructors for the creative input!!
+## Shoutouts
+Many many thanks to the many classmates and instructors for the technical and creative input!!
 
-lessons learned (refleciton)
-future goals(improvements)
-
-images of app
-
-no recipies
