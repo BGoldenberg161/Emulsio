@@ -48,14 +48,13 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts })
 });
 
-app.get('*', (req, res) => {
-  res.render('error')
-}) 
-
 app.use('/auth', require('./routes/auth'))
 app.use('/show', require('./routes/show'))
 app.use('/profile', isLoggedIn, require('./routes/profile'))
 
+app.get('*', (req, res) => {
+  res.render('error')
+}) 
 
 
 
