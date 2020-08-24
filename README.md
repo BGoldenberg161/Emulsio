@@ -66,11 +66,11 @@ ____
 ____
 ## Planning
 ### ERD
-![ERD Image](./images/ERD.png)
+![ERD Image](./public/images/ERD.png)
 
 For my database, I wanted the user to be able to create their own folders and those folders need to be unique to each user. Any given recipe within the database could reside in more than one folder, so I used a joins table to simplify my many to many relationship.
 ### Wireframes
-![Wireframes Image](./images/wireframes.jpg)
+![Wireframes Image](./public/images/wireframes.jpg)
 
 In an attempt to keep my app user friendly, I wanted to keep is simple. Each page will have a similar look while requested the required information. The app obviously evolved over time while in development, but the finished product is not too far off of the initial plan, and the only changes were improvements!
 ____
