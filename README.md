@@ -52,10 +52,10 @@ Emulsio has been deployed using heroku. Access it here: [Emulsio](https://emulsi
 ____
 ## Images of Emulsio in Action
 
-![Home page image](./images/Home.png)
-![Search page image](./images/Search.png)
-![Results page image](./images/Show.png)
-![Detail page image](./images/Detail.png)
+![Home page image](./public/images/Home.png)
+![Search page image](./public/images/Search.png)
+![Results page image](./public/images/Show.png)
+![Detail page image](./public/images/Detail.png)
 
 ## User Stories
 >I have severe food allergies, but I still want delicious meals so I can keep my healthy life.. Without giving up extra time to find recipies that I can enjoy. This app has changed how I approach cooking!
