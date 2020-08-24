@@ -20,12 +20,12 @@ Project 2 General Assembly 713 Squad
 * CSS
 * Materialize
 * Passport
-
+____
 ## Concept
 Cooking with dietary restrictions is always a challange. Finding a recipe, figuring out what needs to be removed, how to replace it, etc. I know I was never a fan, but stress no more! Emulsio is an app where the user can search for recipes by cuisine, diet, and type. Or, if the provided options are not what the user is looking for, they can do a natural language search through an input text box. The recipes can then be viewed and/or saved in any folder of the user's choosing. Finally, this app has been optimized for mobile to ease the use of the app while actually working in the kitchen!
 _______
 ## Where to access Emulsio
-Emulsio has been deployed using heroku. You can access it here: [Emulsio](https://emulsio.herokuapp.com/)
+Emulsio has been deployed using heroku. Access it here: [Emulsio](https://emulsio.herokuapp.com/)
 
 ### How to Install Locally
 
