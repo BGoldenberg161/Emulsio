@@ -97,7 +97,7 @@ Although the HTML was a simple unordered list, implementing this in an ejs file 
 Learning new things rarely sets in overnight and using passport for authentication was no different. Once signed into Emulsio the user is able to save recipes in folders of their choosing. This concept seemed simple until I relized that I was not carrying the user data in an object throughout the code. Little did I know that ```req.user``` is a set of user data for the current logged in user. Once figuring that out, the project came together very nicely!
 
 ## Future Goals
-One stretch goal that I didn't get to implement is a custom input drop down list for folder creation. When adding a recipe to a folder, having a drop down menu that contained the user's existing folders plus an empty cell that the user could type a new folder name into would be some slick functionality. The error handling could also use some love. With more time, I would like create some clever error handling/404 page for the user.
+One stretch goal that I didn't get to implement is a custom input drop down list for folder creation. When adding a recipe to a folder, having a drop down menu that contained the user's existing folders plus an empty cell that the user could type a new folder name into would be some slick functionality. The error handling could also use some love. With more time, I would like create some clever error handling/404 page for the user, currently it is just a simple message.
 
 ____
 ## Author
